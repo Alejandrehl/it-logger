@@ -24,7 +24,7 @@ export const addLog = log => async dispatch => {
       }
     });
     const data = await res.json();
-    dispatch({ type: GET_LOGS, payload: data });
+    dispatch({ type: ADD_LOG, payload: data });
   } catch (error) {
     dispatch({ type: LOGS_ERROR, payload: error.response.data });
   }
