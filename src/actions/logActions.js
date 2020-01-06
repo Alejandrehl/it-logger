@@ -16,7 +16,13 @@ export const getLogs = () => async dispatch => {
 export const addLog = log => async dispatch => {
   try {
     setLoading();
-    const res = await fetch("/logs", {});
+    const res = await fetch("/logs", {
+      method: "POST",
+      body: JSON.stringify(log),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    });
     const data = await res.json();
     dispatch({ type: GET_LOGS, payload: data });
   } catch (error) {
