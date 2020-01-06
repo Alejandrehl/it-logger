@@ -4,7 +4,14 @@ import Moment from "react-moment";
 import PropTypes from "prop-types";
 import { deleteLog } from "../../actions/logActions";
 
+import M from "materialize-css/dist/js/materialize.min.js";
+
 const LogItem = ({ log, deleteLog }) => {
+  const onDelete = id => {
+    deleteLog(id);
+    M.toast({ html: "Log deleted" });
+  };
+
   return (
     <li className="collection-item">
       <div>
@@ -24,7 +31,7 @@ const LogItem = ({ log, deleteLog }) => {
         </span>
         <a
           href="#!"
-          onClick={() => deleteLog(log.id)}
+          onClick={() => onDelete(log.id)}
           className="secondary-content"
         >
           <i className="material-icons grey-text">delete</i>
