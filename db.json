@@ -1,20 +1,5 @@
 {
-  "logs": [
-    {
-      "message": "Primer caso",
-      "attention": false,
-      "tech": "John Doe",
-      "date": "2020-01-06T19:10:42.703Z",
-      "id": 1
-    },
-    {
-      "message": "asdsadadasd",
-      "attention": true,
-      "tech": "John Doe",
-      "date": "2020-01-06T19:12:46.847Z",
-      "id": 2
-    }
-  ],
+  "logs": [],
   "techs": [
     {
       "id": 1,
