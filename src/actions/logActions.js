@@ -57,14 +57,16 @@ export const deleteLog = id => async dispatch => {
 // UPDATE LOG ON SERVER
 export const updateLog = log => async dispatch => {
   try {
-    await fetch(`/logs/${log.id}`, {
+    const res = await fetch(`/logs/${log.id}`, {
       method: "PUT",
       body: JSON.stringify(log),
       headers: {
         "Content-Type": "application/json"
       }
     });
-    dispatch({ type: UPDATE_LOG });
+    const data = await res.json();
+
+    dispatch({ type: UPDATE_LOG, payload: data });
   } catch (error) {
     dispatch({ type: LOGS_ERROR, payload: error.response.data });
   }
